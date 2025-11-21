@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Orden</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/homelayout.css" />
+    <link rel="stylesheet" href="css/order.css" />
+    <link rel="stylesheet" href="css/keypanel.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+
+<div id="qrOverlay" style="display:none;">
+    <div style="text-align:center; padding:10px;">
+        <button id="closeQR" class="btn btn-danger" style="margin-top:30px; margin-bottom:50px;">Cerrar</button>
+        <div id="qrBox"></div>
+    </div>
+</div>
+<div id="mainContent" class="container">
+	
+<header></header>
+    <main role="main" class="pb-3">
+
+        <div class="row flex-row-equal">
+
+            <div class="col-xs-12 col-md-6">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+
+                        <div class="center-pills">
+                            <ul class="nav nav-pills justify-content-center">
+                                <li class="active">
+                                    <a href="#" class="country-link" data-country="Tica">
+                                        Tica
+                                    </a>
+                                </li>
+                                <li class="">
+									<a href="#" class="country-link" data-country="Nica">
+                                        Nica
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="AmountList">
+                            <a href="#" class="amountLink" data-amount="100">
+                                <span class="label label-success amount-label">100</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="200">
+                                <span class="label label-success amount-label">200</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="300">
+                                <span class="label label-success amount-label">300</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="400">
+                                <span class="label label-success amount-label">400</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="500">
+                                <span class="label label-success amount-label">500</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="600">
+                                <span class="label label-success amount-label">600</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="700">
+                                <span class="label label-success amount-label">700</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="800">
+                                <span class="label label-success amount-label">800</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="900">
+                                <span class="label label-success amount-label">900</span>
+                            </a>
+                            <a href="#" class="amountLink" data-amount="1000">
+                                <span class="label label-success amount-label">1000</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row" name="select-column">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="someDate" name="input-select-label">Fecha</label>
+                            <input type="date" id="someDate" class="form-control text-center" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group" style="margin-bottom: 0px;">
+                            <label for="someSelect" name="input-select-label">Sesión</label>
+                            <select id="someSelect" class="form-control text-center">
+                                <option value="1:00" data-some-time="12:50">1:00</option>
+                                <option value="4:30" data-some-time="16:20" selected="selected">4:30</option>
+                                <option value="7:30" data-some-time="19:20">7:30</option>
+                            </select>
+                        </div>
+
+                       
+                    </div>
+
+               
+                </div>
+
+                <!-- 金额 / Reventado / Número -->
+                <div name="input-column" class="row">
+                    <div class="col-xs-3 col-md-4">
+                        <div class="form-group">
+                            <label name="input-select-label" for="inputAmount">Monto</label>
+                            <input type="text" id="inputAmount" class="form-control inputList text-center" autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div class="col-xs-3 col-md-4">
+                        <div class="form-group extraPrize-group">
+                            <label name="input-select-label" for="inputExtraPrize">Reventado</label>
+                            <input type="text" id="inputExtraPrize" class="form-control inputList text-center" autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-5 col-md-4">
+                        <div class="form-group">
+                            <label name="input-select-label" for="inputNumber">Número</label>
+                            <div class="input-group">
+                                <input type="text" id="inputNumber" class="form-control inputList text-center" autocomplete="off" />
+                                <span class="input-group-addon btn btn-primary" name="add-number">Poner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			
+
+
+                <!-- 底部按钮 -->
+                <div class="row button-column">
+                    <div class="col-xs-4 btn-center">
+                        <button type="button" class="btn btn-danger big-btn" id="clear-numberList">Borrar</button>
+                    </div>
+
+                    <div class="col-xs-4 btn-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning big-btn">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button type="button" class="btn btn-warning dropdown-toggle big-btn" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" id="keyArray">Rango (F6)</a></li>
+                                <li><a href="#" id="keyDouble">Parejitas (F7)</a></li>
+                                <li><a href="#" id="keyHead">Iniciación (F9)</a></li>
+                                <li><a href="#" id="keyEnd">Terminación (F10)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4 btn-center">
+                        <button type="button" class="btn btn-info big-btn" id="submit-button">Entregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6" id="listCol">
+                <div class="row text-center">
+                    <div class="col-xs-6">
+                        <h2>
+                            <span id="orderCount" class="label label-warning">Cantidad</span>
+                        </h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <h2>
+                            <span id="orderTotal" class="label label-danger">Total</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="table-scroll">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Número</th>
+                            <th class="text-center" data-col="extraPrize">Reventado</th>
+                            <th class="text-center">Monto</th>
+                            <th class="text-center">Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody id="numberList">
+                        <!-- 纯静态版本这里为空，将来用 JS 动态填充 -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <audio id="audioSuccessfully">
+                    <source src="music/VoiceSuccessfully.wav" type="audio/wav">
+                </audio>
+                <audio id="audioWrong">
+                    <source src="music/VoiceWrong.wav" type="audio/wav">
+                </audio>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<div id="modalBackdrop" style="display:none;">
+
+	<div class="panel panel-info" id="addArrayPanel">
+        <div class="panel-heading text-center">
+            <h1 class="panel-title">Rango</h1>
+        </div>
+        <div class="panel-body">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">Desde</span>
+                <input id="inputArrayStart" type="number" class="form-control tab-array">
+            </div>
+            <div class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Hasta</span>
+                <input id="inputArrayEnd" type="number" class="form-control tab-array">
+            </div>
+            <div id="arrayReventadoRow" class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Reventado</span>
+                <input id="inputArrayExtraPrize" type="number" class="form-control tab-array">
+            </div>
+            <div class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Monto</span>
+                <input id="inputArrayAmount" type="number" class="form-control tab-array">
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-lg pull-Left" id="cancelAddArray">Cancelar</button>
+            <button class="btn btn-primary btn-lg pull-right" id="addArray">Seguro</button>
+        </div>
+    </div>
+
+
+    <div class="panel panel-info" id="addDoublePanel">
+        <div class="panel-heading text-center">
+            <h1 class="panel-title">Parejitas</h1>
+        </div>
+        <div class="panel-body">
+            <div id="doubleReventadoRow" class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Reventado</span>
+                <input id="inputDoubleExtraPrize" type="number" class="form-control tab-double">
+            </div>
+            <div class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Monto</span>
+                <input id="inputDoubleAmount" type="number" class="form-control tab-double">
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-lg pull-Left" id="cancelAddDouble">Cancelar</button>
+            <button class="btn btn-primary btn-lg pull-right" id="addDouble">Seguro</button>
+        </div>
+    </div>
+
+    <div class="panel panel-info" id="addHeadPanel">
+        <div class="panel-heading text-center">
+            <h1 class="panel-title">Iniciación</h1>
+        </div>
+        <div class="panel-body">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">Número</span>
+                <input id="inputHeadNumber" type="number" class="form-control tab-head">
+            </div>
+            <div id="headReventadoRow" class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Reventado</span>
+                <input id="inputHeadExtraPrize" type="number" class="form-control tab-head">
+            </div>
+            <div class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Monto</span>
+                <input id="inputHeadAmount" type="number" class="form-control tab-head">
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-lg pull-Left" id="cancelAddHead">Cancelar</button>
+            <button class="btn btn-primary btn-lg pull-right" id="addHead">Seguro</button>
+        </div>
+    </div>
+
+    <div class="panel panel-info" id="addEndPanel">
+        <div class="panel-heading text-center">
+            <h1 class="panel-title">Terminación</h1>
+        </div>
+        <div class="panel-body">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">Número</span>
+                <input id="inputEndNumber" type="number" class="form-control tab-end">
+            </div>
+            <div id="endReventadoRow" class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Reventado</span>
+                <input id="inputEndExtraPrize" type="number" class="form-control tab-end">
+            </div>
+            <div class="input-group input-group-lg" style="margin-top: 20px;">
+                <span class="input-group-addon">Monto</span>
+                <input id="inputEndAmount" type="number" class="form-control tab-end">
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-lg pull-Left" id="cancelAddEnd">Cancelar</button>
+            <button class="btn btn-primary btn-lg pull-right" id="addEnd">Seguro</button>
+        </div>
+    </div>
+
+
+    <div class="panel panel-info" id="addReventadoPanel">
+        <div class="panel-heading text-center">
+            <h1 id="panelReventado" class="panel-title" style="font-size: 48px; font-weight: bold; margin: 0 auto; color: indigo;"></h1>
+        </div>
+        <div class="panel-body">
+            <div class="input-group input-group-lg">
+                <input id="inputEditExtraPrize" type="text" class="form-control tab-single" style="font-size: 48px; text-align: center; font-weight: bold;" />
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-lg pull-Left" id="cancelReventado">Cancelar</button>
+            <button class="btn btn-primary btn-lg pull-right" id="editReventado">Seguro</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/homelayout.js"></script>
+<script src="js/keypanel.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

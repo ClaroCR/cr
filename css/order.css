@@ -1,0 +1,112 @@
+﻿#qrOverlay {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    padding: 10px 0;
+}
+
+#qrBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AmountList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* ⭐ 一行 5 列 */
+    gap: 0px; /* 每个标签之间的间距 */
+}
+
+    .AmountList a {
+        text-align: center;
+    }
+
+.amount-label {
+    display: inline-block;
+    width: 100%; /* 占满当前格子宽度 */
+    padding: 6px 0;
+    font-size: 22px;
+}
+
+
+
+.form-group {
+    text-align: center;
+}
+
+[name="input-select-label"] {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+[name="select-input"] {
+    text-align: center;
+}
+
+
+
+
+.table.table-bordered {
+    font-size: 14px; /* 设置字体大小为 16px */
+}
+
+.button-column {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    [name="input-select-label"] {
+        font-size: 20px;
+    }
+
+    #someDate, #someSelect, #inputAmount, #inputNumber, #inputExtraPrize {
+        font-size: 20px;
+    }
+
+    .table.table-bordered {
+        font-size: 20px; /* 设置字体大小为 16px */
+    }
+
+    #numberList {
+        font-size: 22px; /* 设置字体大小为 16px */
+    }
+
+    .big-btn {
+        font-size: 20px !important; /* 覆盖默认按钮字体大小 */
+        padding: 10px 20px; /* 可以适当调大内边距 */
+    }
+}
+
+.btn-center {
+    text-align: center;
+}
+
+
+
+
+.table-scroll table {
+    width: 100%;
+    border-collapse: separate;
+}
+
+.table-scroll thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff; /* 你可以根据你的表头色更改 */
+}
+
+
+#listCol {
+    display: flex;
+    flex-direction: column;
+    height: 97vh; /* 或你需要的高度 */
+    min-height: 500px;
+}
+
+.table-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    position: relative;
+}

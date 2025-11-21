@@ -1,0 +1,44 @@
+﻿
+.center-pills {
+    display: flex;
+    justify-content: center; /* 居中对齐 */
+    flex-wrap: wrap; /* 允许换行 */
+    width: 100%; /* 占满父容器 */
+}
+
+.nav-pills {
+    display: flex;
+    justify-content: center; /* 居中对齐 */
+    flex-wrap: wrap; /* 超出内容换行 */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* 移除默认列表样式 */
+}
+
+    .nav-pills li {
+        margin: 5px 10px; /* 增加列表项间距 */
+    }
+
+.nav-link {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+.AmountList, .justify-content-center {
+    text-align: center; /* 确保内容居中 */
+    font-size: 22px;
+    line-height: 1.5; /* 增大行间距 */
+}
+
+    .AmountList a {
+        text-decoration: none; /* 移除下划线 */
+        color: inherit; /* 链接颜色继承 */
+        cursor: pointer; /* 鼠标样式 */
+        margin: 10px; /* 增加左右间距 */
+        display: inline-block; /* 使 margin 同时作用于上下左右 */
+        margin-bottom: 20px; /* 下方间距 */
+    }
+
+
+
