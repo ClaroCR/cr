@@ -1391,8 +1391,8 @@ $("#submit-button").click(function () {
 
     new QRCode(document.getElementById("qrBox"), {
         text: qrString,
-        width: 200,
-        height: 200,
+        width: 280,
+        height: 280,
         correctLevel: QRCode.CorrectLevel.M
     });
 
@@ -1421,4 +1421,5 @@ $(document).keydown(function (e) {
 
 
 $('#inputAmount').focus();
+
 
