@@ -1383,6 +1383,11 @@ $("#submit-button").click(function () {
                 : 0
         });
     });
+	if (list.length === 0) {
+		$('#audioWrong')[0].play();
+		alert("No hay números para generar QR");
+		return;
+	}
 
     var qrString = encodeOrderToQR_V4(country, date, session, list);
 	//console.log(qrString);
@@ -1421,6 +1426,7 @@ $(document).keydown(function (e) {
 
 
 $('#inputAmount').focus();
+
 
 
 
